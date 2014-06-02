@@ -1,5 +1,6 @@
 package com.game.client;
 
+import com.game.client.Util.FileParser;
 import com.game.client.WordService.*;
 
 /**

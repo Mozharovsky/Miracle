@@ -54,11 +54,19 @@ public class WordHandler implements Handler {
                 chars.removeAll(charsToRemove);
             } else {
                 attemptsLeft--;
-                System.out.println("There is no such a character! You've got " + attemptsLeft + "attempts left!");
+                System.out.printf("There is no such a character! You've got %d attempts left!%n", attemptsLeft);
             }
 
-            if(attemptsLeft == 0 || chars.isEmpty()) {
-                System.out.println("Game over!");
+            if(attemptsLeft == 0) {
+                System.out.println("You have lost! Game over.");
+
+                if(manager.getUserInput("\n\n\n\n--------------------------------------------\n" +
+                        "If you want to continue playing, type 1, else some other number: ").equals("1")) {
+                    System.out.println("--------------------------------------------\n\n\n\n");
+                    new WordHandler().start();
+                } else isActive = false;
+            } else if(chars.isEmpty()) {
+                System.out.println("You have won! Game over.");
                 isActive = false;
             }
         }

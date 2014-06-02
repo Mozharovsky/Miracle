@@ -34,9 +34,7 @@ public class WordPrinter implements Printer {
             getWordStatus();
         }
 
-
         if(list.contains(userGuess.charAt(0))) {
-            System.out.println("Here");
             wordList.set(list.indexOf(userGuess.charAt(0)), list.get(list.indexOf(userGuess.charAt(0))));
         }
 
@@ -44,7 +42,6 @@ public class WordPrinter implements Printer {
             for(int i = 0; i < list.size(); i++) {
                 if(list.get(i).toString().equals(userGuess)) {
                     indexes.add(i);
-                    //System.out.println("Индексы: " + i);
                 }
             }
 
@@ -81,6 +78,6 @@ public class WordPrinter implements Printer {
     @Override
     public void printGameInfo() {
         // TODO: Add an info
-        System.out.printf("Welcome to MIRACLE game ... ");
+        System.out.printf("Welcome to MIRACLE game ... \n");
     }
 }
