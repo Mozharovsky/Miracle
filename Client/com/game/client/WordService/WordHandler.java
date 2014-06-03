@@ -63,8 +63,11 @@ public class WordHandler implements Handler {
                 if(manager.getUserInput("\n\n\n\n--------------------------------------------\n" +
                         "If you want to continue playing, type 1, else some other number: ").equals("1")) {
                     System.out.println("--------------------------------------------\n\n\n\n");
+                    this.isActive = false; // to close the current game
                     new WordHandler().start();
-                } else isActive = false;
+                } else {
+                    isActive = false;
+                }
             } else if(chars.isEmpty()) {
                 System.out.println("You have won! Game over.");
                 isActive = false;
